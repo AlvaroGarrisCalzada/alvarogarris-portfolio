@@ -1,0 +1,96 @@
+[
+  {
+    "id": "bloomberg-quantitative",
+    "title": "Bloomberg Quantitative Analysis Course",
+    "issuer": "Bloomberg",
+    "date": "Oct 2025",
+    "credentialUrl": "https://portal.bloombergforeducation.com",
+    "credentialId": "cB4XBfE73nEf8Kxe4DyxNBNS"
+  },
+  {
+    "id": "world-bank-policy",
+    "title": "Policy Makers: Assessing the Effects of Fiscal Policies on Poverty and Inequality",
+    "issuer": "The World Bank",
+    "date": "Oct 2025",
+    "credentialUrl": "",
+    "pdfPath": "/certificates/world-bank-certificate.pdf"
+  },
+  {
+    "id": "mckinsey-forward",
+    "title": "McKinsey Forward Program",
+    "issuer": "McKinsey & Company",
+    "date": "May 2024",
+    "credentialUrl": ""
+  },
+  {
+    "id": "pascual-consulting",
+    "title": "Marketing Consulting Challenge",
+    "issuer": "Pascual",
+    "date": "Apr 2023",
+    "credentialUrl": ""
+  },
+  {
+    "id": "bloomberg-market-concepts",
+    "title": "Bloomberg Market Concepts",
+    "issuer": "Bloomberg",
+    "date": "Nov 2021",
+    "credentialUrl": "https://portal.bloombergforeducation.com",
+    "credentialId": "Ti64VpcyvkkGtM7CjE9hkY6J"
+  },
+  {
+    "id": "ie-stock-pitch",
+    "title": "#2 Prize IE Stock Pitch (ASML NV.)",
+    "issuer": "IE Investment Club",
+    "date": "Nov 2021",
+    "credentialUrl": ""
+  },
+  {
+    "id": "jpmorgan-virtual",
+    "title": "Virtual Experience",
+    "issuer": "J.P. Morgan",
+    "date": "Dec 2021",
+    "credentialUrl": ""
+  },
+  {
+    "id": "ieu-summer",
+    "title": "IEU Summer Program",
+    "issuer": "IE University",
+    "date": "Jul 2020",
+    "credentialUrl": ""
+  },
+  {
+    "id": "cambridge-advance",
+    "title": "Advance Certificate",
+    "issuer": "University of Cambridge",
+    "date": "Jun 2020",
+    "credentialUrl": ""
+  },
+  {
+    "id": "navarra-business",
+    "title": "Business Management & Leadership",
+    "issuer": "Universidad de Navarra",
+    "date": "Jun 2020",
+    "credentialUrl": ""
+  },
+  {
+    "id": "goethe-c1",
+    "title": "Zertifikat C1",
+    "issuer": "Goethe-Institut e.V.",
+    "date": "Jun 2020",
+    "credentialUrl": ""
+  },
+  {
+    "id": "eype-delegate",
+    "title": "Delegate",
+    "issuer": "European Youth Parliament España (EYPE)",
+    "date": "Apr 2020",
+    "credentialUrl": ""
+  },
+  {
+    "id": "hsk2-chinese",
+    "title": "HSK2",
+    "issuer": "Hanban Confucius Institute",
+    "date": "Mar 2020",
+    "credentialUrl": ""
+  }
+]

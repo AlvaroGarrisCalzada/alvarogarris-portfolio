@@ -1,0 +1,24 @@
+[
+  {
+    "id": "ie-business-school-bba",
+    "institution": "IE Business School",
+    "degree": "Bachelor of Business Administration (BBA)",
+    "field": "Dual Degree in Business and Data Analytics",
+    "location": "Madrid, Spain",
+    "startDate": "Sep 2021",
+    "endDate": "Jul 2026 (Expected)",
+    "description": "GPA: 90/100 (Honors Society - Top 10%). Awards: IE Foundation \"High Potential Scholarship\" - 65% academic fees. Relevant Honors: Macroeconomics, Portfolio Management, Capital Markets, Economic Thought, and Options & Derivatives.",
+    "logoPath": "/images/logos/IE_University.jpg"
+  },
+  {
+    "id": "bocconi-exchange",
+    "institution": "Bocconi University",
+    "degree": "Exchange Programme",
+    "field": "Economics and Finance",
+    "location": "Milan, Italy",
+    "startDate": "Sep 2024",
+    "endDate": "Jan 2025",
+    "description": "Semester exchange focusing on European economics, financial markets, and quantitative finance. Completed advanced courses in derivatives pricing and portfolio management.",
+    "logoPath": "/images/logos/bocconi.png"
+  }
+]
