@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://alvarogarris.com',
+    url: 'https://alvarogarris-portfolio.vercel.app',
     title: 'Alvaro Garris | Financial Advisory & Data Analytics',
     description: 'Financial Advisory Analyst specializing in M&A, Risk Modeling, and Data Analytics',
     siteName: 'Alvaro Garris Portfolio',

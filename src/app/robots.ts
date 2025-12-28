@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://alvarogarris.com/sitemap.xml',
+    sitemap: 'https://alvarogarris-portfolio.vercel.app/sitemap.xml',
   };
 }
