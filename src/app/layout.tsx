@@ -18,25 +18,25 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Alvaro Garris | Financial Advisory & Data Analytics',
+    default: 'Alvaro Garris - Portfolio | Financial Analyst & Data Specialist',
     template: '%s | Alvaro Garris',
   },
-  description: 'Financial Advisory Analyst specializing in M&A, Risk Modeling, and Data Analytics. Experience in Deloitte, Rothschild & Co, and more.',
-  keywords: ['Financial Advisory', 'M&A', 'Risk Modeling', 'Data Analytics', 'Python', 'Excel', 'Power BI'],
+  description: 'Professional portfolio of Alvaro Garris - Financial Advisory Analyst with experience at Deloitte, Rothschild & Co. Explore my projects, skills, and professional background in M&A, Risk Modeling, and Data Analytics.',
+  keywords: ['Financial Advisory', 'M&A', 'Risk Modeling', 'Data Analytics', 'Python', 'Excel', 'Power BI', 'Portfolio'],
   authors: [{ name: 'Alvaro Garris' }],
   creator: 'Alvaro Garris',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://alvarogarris-portfolio.vercel.app',
-    title: 'Alvaro Garris | Financial Advisory & Data Analytics',
-    description: 'Financial Advisory Analyst specializing in M&A, Risk Modeling, and Data Analytics',
+    title: 'Alvaro Garris - Portfolio | Financial Analyst & Data Specialist',
+    description: 'Professional portfolio showcasing my experience in Financial Advisory, M&A, Risk Modeling, and Data Analytics. Discover my projects and professional journey.',
     siteName: 'Alvaro Garris Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alvaro Garris | Financial Advisory & Data Analytics',
-    description: 'Financial Advisory Analyst specializing in M&A, Risk Modeling, and Data Analytics',
+    title: 'Alvaro Garris - Portfolio | Financial Analyst & Data Specialist',
+    description: 'Professional portfolio showcasing my experience in Financial Advisory, M&A, Risk Modeling, and Data Analytics',
   },
   robots: {
     index: true,
