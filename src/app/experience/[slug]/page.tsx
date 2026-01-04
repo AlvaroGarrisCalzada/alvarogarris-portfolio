@@ -55,7 +55,6 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
 
   // Serialize both versions
   const mdxSource = await serialize(englishContent);
-  const mdxSource_es = await serialize(spanishContent);
   const mdxSource_es = spanishContent !== englishContent ? await serialize(spanishContent) : mdxSource;
 
   return (
