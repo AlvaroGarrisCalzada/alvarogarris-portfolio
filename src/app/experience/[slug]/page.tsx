@@ -118,7 +118,14 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
         </div>
 
         <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-8">
-          <div className="prose prose-slate dark:prose-invert max-w-none">
+          <div className="prose prose-slate dark:prose-invert max-w-none
+            [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-slate-900 [&>h2]:dark:text-white [&>h2]:mb-4 [&>h2]:mt-8 [&>h2]:pb-3 [&>h2]:border-b [&>h2]:border-slate-200 [&>h2]:dark:border-slate-700
+            [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:text-slate-800 [&>h3]:dark:text-slate-200 [&>h3]:mt-6 [&>h3]:mb-3 [&>h3]:bg-slate-50 [&>h3]:dark:bg-slate-700/50 [&>h3]:px-4 [&>h3]:py-2 [&>h3]:rounded-lg [&>h3]:border-l-4 [&>h3]:border-primary-500
+            [&>ul]:space-y-2 [&>ul]:my-4
+            [&>p]:text-slate-600 [&>p]:dark:text-slate-400 [&>p]:leading-relaxed
+            [&>hr]:my-8 [&>hr]:border-slate-200 [&>hr]:dark:border-slate-700
+            [&_strong]:text-slate-900 [&_strong]:dark:text-white [&_strong]:font-semibold
+            [&>blockquote]:border-l-4 [&>blockquote]:border-primary-500 [&>blockquote]:pl-4 [&>blockquote]:py-2 [&>blockquote]:bg-primary-50 [&>blockquote]:dark:bg-primary-900/20 [&>blockquote]:rounded-r">
             {experience.content && <MDXRemote source={experience.content} />}
           </div>
         </div>

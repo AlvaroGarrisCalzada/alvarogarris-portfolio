@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionHeading } from '@/components/SectionHeading';
+import { ExperienceCard } from '@/components/ExperienceCard';
+import { ProjectCard } from '@/components/ProjectCard';
 
 interface HomeClientProps {
   featuredExperience: any[];
@@ -31,18 +33,9 @@ export function HomeClient({ featuredExperience, featuredProjects }: HomeClientP
           </div>
           
           <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
-            {featuredExperience.map((exp) => {
-              // Renderizar tarjetas de experiencia...
-              return (
-                <div key={exp.slug} className="bg-slate-50 dark:bg-slate-900 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.frontmatter.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mt-2">{exp.frontmatter.company}</p>
-                  <Link href={`/experience/${exp.slug}`} className="text-primary-600 dark:text-primary-400 hover:underline mt-4 inline-block">
-                    {t('experience.card.readMore')} →
-                  </Link>
-                </div>
-              );
-            })}
+            {featuredExperience.map((exp) => (
+              <ExperienceCard key={exp.slug} experience={exp} />
+            ))}
           </div>
         </div>
       </section>
@@ -64,17 +57,9 @@ export function HomeClient({ featuredExperience, featuredProjects }: HomeClientP
           </div>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => {
-              return (
-                <div key={project.slug} className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{project.frontmatter.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mt-2">{project.frontmatter.description}</p>
-                  <Link href={`/projects/${project.slug}`} className="text-primary-600 dark:text-primary-400 hover:underline mt-4 inline-block">
-                    {t('projects.card.viewDetails')} →
-                  </Link>
-                </div>
-              );
-            })}
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -108,3 +93,4 @@ export function HomeClient({ featuredExperience, featuredProjects }: HomeClientP
     </>
   );
 }
+
