@@ -1,22 +1,29 @@
 [
   {
     "category": "Data Analysis & Visualization",
+    "category_es": "Análisis y Visualización de Datos",
     "items": ["Excel (Advanced)", "Power BI", "Tableau", "Python (Pandas, NumPy)", "R", "SQL"]
   },
   {
     "category": "Financial & Market Data",
+    "category_es": "Datos Financieros y de Mercado",
     "items": ["Bloomberg Terminal", "MacroBond", "Capital IQ", "FactSet", "Refinitiv Eikon"]
   },
   {
     "category": "Programming & Technical",
+    "category_es": "Programación y Técnico",
     "items": ["Python", "R", "SQL", "Git", "JavaScript", "HTML/CSS"]
   },
   {
     "category": "Financial Modeling",
-    "items": ["DCF Valuation", "LBO Modeling", "M&A Analysis", "Financial Statement Analysis", "Credit Analysis"]
+    "category_es": "Modelización Financiera",
+    "items": ["DCF Valuation", "LBO Modeling", "M&A Analysis", "Financial Statement Analysis", "Credit Analysis"],
+    "items_es": ["Valoración DCF", "Modelización LBO", "Análisis M&A", "Análisis de Estados Financieros", "Análisis de Crédito"]
   },
   {
     "category": "Statistical & ML",
-    "items": ["Scikit-learn", "Statsmodels", "Time Series Analysis", "Regression Analysis", "Monte Carlo Simulation"]
+    "category_es": "Estadística y ML",
+    "items": ["Scikit-learn", "Statsmodels", "Time Series Analysis", "Regression Analysis", "Monte Carlo Simulation"],
+    "items_es": ["Scikit-learn", "Statsmodels", "Análisis de Series Temporales", "Análisis de Regresión", "Simulación Monte Carlo"]
   }
 ]

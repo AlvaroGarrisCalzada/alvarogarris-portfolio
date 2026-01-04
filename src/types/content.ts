@@ -45,18 +45,25 @@ export interface Certificate {
 
 export interface Skill {
   category: string;
+  category_es?: string;
   items: string[];
+  items_es?: string[];
 }
 
 export interface Education {
   id: string;
   institution: string;
   degree: string;
+  degree_es?: string;
   field?: string;
+  field_es?: string;
   location: string;
+  location_es?: string;
   startDate: string;
   endDate: string;
+  endDate_es?: string;
   description?: string;
+  description_es?: string;
   logoPath?: string;
 }
 

@@ -37,17 +37,25 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
     notFound();
   }
 
-  // Split content by language sections
-  const contentParts = experience.content.split(/## Descripción|## Responsabilidades Clave|## Logros Clave/);
-  const englishContent = contentParts[0].trim();
-  
-  // Extract Spanish sections
+  // Split content by detecting Spanish section markers
   const fullContent = experience.content;
-  const spanishMatch = fullContent.match(/## Descripción[\s\S]*$/);
-  const spanishContent = spanishMatch ? spanishMatch[0] : englishContent;
+  
+  // Find where Spanish content starts (after ## Descripción)
+  const spanishStartIndex = fullContent.search(/## Descripción/);
+  
+  let englishContent = fullContent;
+  let spanishContent = fullContent;
+  
+  if (spanishStartIndex !== -1) {
+    // English is everything before Spanish section
+    englishContent = fullContent.substring(0, spanishStartIndex).trim();
+    // Spanish is everything from Spanish section onwards
+    spanishContent = fullContent.substring(spanishStartIndex).trim();
+  }
 
   // Serialize both versions
   const mdxSource = await serialize(englishContent);
+  const mdxSource_es = await serialize(spanishContent);
   const mdxSource_es = spanishContent !== englishContent ? await serialize(spanishContent) : mdxSource;
 
   return (

@@ -3,22 +3,32 @@
     "id": "ie-business-school-bba",
     "institution": "IE Business School",
     "degree": "Bachelor of Business Administration (BBA)",
+    "degree_es": "Licenciatura en Administración de Empresas (BBA)",
     "field": "Dual Degree in Business and Data Analytics",
+    "field_es": "Doble Grado en Business y Análisis de Datos",
     "location": "Madrid, Spain",
+    "location_es": "Madrid, España",
     "startDate": "Sep 2021",
     "endDate": "Jul 2026 (Expected)",
+    "endDate_es": "Jul 2026 (Esperado)",
     "description": "GPA: 90/100 (Honors Society - Top 10%). Awards: IE Foundation \"High Potential Scholarship\" - 65% academic fees. Relevant Honors: Macroeconomics, Portfolio Management, Capital Markets, Economic Thought, and Options & Derivatives.",
+    "description_es": "GPA: 90/100 (Honors Society - Top 10%). Premios: Beca \"High Potential Scholarship\" de IE Foundation - 65% de tasas académicas. Honores Relevantes: Macroeconomía, Gestión de Carteras, Mercados de Capitales, Pensamiento Económico y Opciones y Derivados.",
     "logoPath": "/images/logos/IE_University.jpg"
   },
   {
     "id": "bocconi-exchange",
     "institution": "Bocconi University",
     "degree": "Exchange Programme",
+    "degree_es": "Programa de Intercambio",
     "field": "Economics and Finance",
+    "field_es": "Economía y Finanzas",
     "location": "Milan, Italy",
+    "location_es": "Milán, Italia",
     "startDate": "Sep 2024",
     "endDate": "Jan 2025",
+    "endDate_es": "Enero 2025",
     "description": "Semester exchange focusing on European economics, financial markets, and quantitative finance. Completed advanced courses in derivatives pricing and portfolio management.",
+    "description_es": "Semestre de intercambio enfocado en economía europea, mercados financieros y finanzas cuantitativas. Completé cursos avanzados en valoración de derivados y gestión de carteras.",
     "logoPath": "/images/logos/bocconi.png"
   }
 ]
