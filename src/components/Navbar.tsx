@@ -4,19 +4,22 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Experience', href: '/experience' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Certificates', href: '/certificates' },
-  { name: 'Contact', href: '/contact' },
-];
+import { LanguageToggle } from './LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.experience'), href: '/experience' },
+    { name: t('nav.projects'), href: '/projects' },
+    { name: t('nav.certificates'), href: '/certificates' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
@@ -46,11 +49,13 @@ export function Navbar() {
                 </Link>
               );
             })}
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-2">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

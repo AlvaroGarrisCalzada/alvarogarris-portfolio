@@ -1,7 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
@@ -26,7 +30,7 @@ export function Footer() {
                   href="/about"
                   className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  About
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
@@ -34,7 +38,7 @@ export function Footer() {
                   href="/experience"
                   className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  Experience
+                  {t('nav.experience')}
                 </Link>
               </li>
               <li>
@@ -42,7 +46,7 @@ export function Footer() {
                   href="/projects"
                   className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  Projects
+                  {t('nav.projects')}
                 </Link>
               </li>
               <li>
@@ -105,7 +109,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
           <p className="text-center text-sm text-slate-600 dark:text-slate-400">
-            © {currentYear} Alvaro Garris. All rights reserved.
+            © {currentYear} Alvaro Garris. {t('footer.rights')}.
           </p>
         </div>
       </div>

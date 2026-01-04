@@ -4,6 +4,7 @@ import { getFeaturedExperience, getFeaturedProjects } from '@/lib/content';
 import { ExperienceCard } from '@/components/ExperienceCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeading } from '@/components/SectionHeading';
+import { HomeClient } from './HomeClient';
 
 export default async function HomePage() {
   const featuredExperience = await getFeaturedExperience();
@@ -104,80 +105,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Featured Experience */}
-      <section className="py-16 bg-white dark:bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-8">
-            <SectionHeading 
-              title="Featured Experience" 
-              subtitle="Recent professional roles"
-            />
-            <Link
-              href="/experience"
-              className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
-            >
-              View All →
-            </Link>
-          </div>
-          
-          <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
-            {featuredExperience.map((exp) => (
-              <ExperienceCard key={exp.slug} experience={exp} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-8">
-            <SectionHeading 
-              title="Featured Projects" 
-              subtitle="Personal and academic work"
-            />
-            <Link
-              href="/projects"
-              className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
-            >
-              View All →
-            </Link>
-          </div>
-          
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-            Let&apos;s Work Together
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-            Interested in financial advisory, data analytics, or collaboration opportunities?
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/Garris Alvaro IE-Bocconi CV (Website).pdf"
-              download
-              className="inline-flex items-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
-            >
-              Download CV
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-3 border-2 border-slate-300 dark:border-slate-600 hover:border-primary-600 dark:hover:border-primary-500 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-colors"
-            >
-              Contact Me
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HomeClient 
+        featuredExperience={featuredExperience} 
+        featuredProjects={featuredProjects} 
+      />
     </div>
   );
 }
