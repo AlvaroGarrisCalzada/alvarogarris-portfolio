@@ -1,12 +1,17 @@
 export interface Experience {
   slug: string;
   title: string;
+  title_es?: string;
   company: string;
   role: string;
+  role_es?: string;
   startDate: string;
   endDate: string;
+  endDate_es?: string;
   location: string;
+  location_es?: string;
   tags: string[];
+  tags_es?: string[];
   tools: string[];
   featured: boolean;
   logoPath?: string;
