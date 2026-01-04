@@ -1,14 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Project } from '@/types/content';
 import { Card } from './Card';
 import { Tag } from './Tag';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { language } = useLanguage();
+  
+  const title = language === 'es' ? (project.title_es || project.title) : project.title;
+  const description = language === 'es' ? (project.description_es || project.description) : project.description;
   return (
     <Link href={`/projects/${project.slug}`}>
       <Card hover>
@@ -24,11 +31,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
         
         <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-          {project.title}
+          {title}
         </h3>
         
         <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-          {project.description}
+          {description}
         </p>
 
         {project.tech && project.tech.length > 0 && (

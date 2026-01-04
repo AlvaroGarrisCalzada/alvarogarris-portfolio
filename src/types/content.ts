@@ -21,7 +21,9 @@ export interface Experience {
 export interface Project {
   slug: string;
   title: string;
+  title_es?: string;
   description: string;
+  description_es?: string;
   tech: string[];
   githubUrl?: string;
   demoUrl?: string;
