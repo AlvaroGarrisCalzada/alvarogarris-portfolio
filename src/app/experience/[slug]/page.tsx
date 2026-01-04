@@ -37,25 +37,41 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
     notFound();
   }
 
-  // Split content by detecting Spanish section markers
+  // Split content into English and Spanish sections
   const fullContent = experience.content;
   
-  // Find where Spanish content starts (after ## Descripción)
-  const spanishStartIndex = fullContent.search(/## Descripción/);
+  // English sections: Overview, Key Responsibilities, Key Achievements
+  // Spanish sections: Descripción, Responsabilidades Clave, Logros Clave
   
-  let englishContent = fullContent;
-  let spanishContent = fullContent;
+  const englishSectionPattern = /##\s*(Overview|Key Responsibilities|Key Achievements)[\s\S]*?(?=##\s*(Descripción|Responsabilidades Clave|Logros Clave|$))/g;
+  const spanishSectionPattern = /##\s*(Descripción|Responsabilidades Clave|Logros Clave)[\s\S]*?(?=##\s*(Overview|Key Responsibilities|Key Achievements|$))/g;
   
-  if (spanishStartIndex !== -1) {
-    // English is everything before Spanish section
-    englishContent = fullContent.substring(0, spanishStartIndex).trim();
-    // Spanish is everything from Spanish section onwards
-    spanishContent = fullContent.substring(spanishStartIndex).trim();
+  let englishContent = '';
+  let spanishContent = '';
+  
+  // Extract English sections
+  const englishMatches = fullContent.matchAll(englishSectionPattern);
+  for (const match of englishMatches) {
+    englishContent += match[0] + '\n\n';
+  }
+  
+  // Extract Spanish sections
+  const spanishMatches = fullContent.matchAll(spanishSectionPattern);
+  for (const match of spanishMatches) {
+    spanishContent += match[0] + '\n\n';
+  }
+  
+  // If no sections found, use full content for both
+  if (!englishContent.trim()) {
+    englishContent = fullContent;
+  }
+  if (!spanishContent.trim()) {
+    spanishContent = fullContent;
   }
 
   // Serialize both versions
-  const mdxSource = await serialize(englishContent);
-  const mdxSource_es = spanishContent !== englishContent ? await serialize(spanishContent) : mdxSource;
+  const mdxSource = await serialize(englishContent.trim());
+  const mdxSource_es = await serialize(spanishContent.trim());
 
   return (
     <ExperienceDetailClient 
