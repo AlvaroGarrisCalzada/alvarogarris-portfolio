@@ -55,11 +55,20 @@ export const metadata: Metadata = {
     title: 'Alvaro Garris - Portfolio | Analista Financiero y Especialista en Datos',
     description: 'Portfolio profesional mostrando mi experiencia en Asesoramiento Financiero, M&A, Modelización de Riesgos y Análisis de Datos. Descubre mis proyectos y trayectoria profesional. | Professional portfolio showcasing experience in Financial Advisory, M&A, Risk Modeling, and Data Analytics.',
     siteName: 'Alvaro Garris Portfolio',
+    images: [
+      {
+        url: '/images/profile.jpeg',
+        width: 800,
+        height: 800,
+        alt: 'Alvaro Garris - Financial Analyst & Data Specialist',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alvaro Garris - Analista Financiero y Especialista en Datos | Financial Analyst & Data Specialist',
     description: 'Portfolio profesional - Experiencia en Asesoramiento Financiero, M&A, Modelización de Riesgos y Análisis de Datos | Professional portfolio - Financial Advisory, M&A, Risk Modeling, Data Analytics',
+    images: ['/images/profile.jpeg'],
   },
   robots: {
     index: true,
