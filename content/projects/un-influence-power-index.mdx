@@ -1,0 +1,97 @@
+---
+title: "Influence Power Index: Network Science Model for the UN General Assembly"
+title_es: "Índice de Poder de Influencia: Modelo de Ciencia de Redes para la Asamblea General de la ONU"
+description: "A 13-Metric Network Science Model Measuring Structural Influence in UNGA Voting (1981-2025)"
+description_es: "Modelo de Ciencia de Redes con 13 Métricas para Medir la Influencia Estructural en las Votaciones de la AGNU (1981-2025)"
+tech: ["Python", "Network Science", "Graph Theory", "PCA", "K-Means Clustering", "Community Detection", "Data Visualization", "Plotly"]
+githubUrl: "https://github.com/AlvaroGarrisCalzada/United-Nations-topic-influence-index"
+featured: true
+screenshots: ["/images/projects/03_topic_isolation_heatmap.png"]
+---
+
+## Project Overview
+
+The **Influence Power Index (IPI)** is a composite network science metric designed to quantify structural influence in the United Nations General Assembly (UNGA). Rather than measuring raw geopolitical power, the IPI captures how central, connected, and strategically positioned a country is within the global voting network.
+
+The model aggregates **13 z-scored network metrics** computed on voting similarity graphs built from **947,434 vote records** across **5,694 resolutions** and **202 member states**, segmented by eight U.S. presidential administrations (1981–2025).
+
+## Descripción del Proyecto
+
+El **Índice de Poder de Influencia (IPI)** es una métrica compuesta de ciencia de redes diseñada para cuantificar la influencia estructural en la Asamblea General de las Naciones Unidas (AGNU). En lugar de medir el poder geopolítico bruto, el IPI captura cuán central, conectado y estratégicamente posicionado está un país dentro de la red global de votaciones.
+
+El modelo agrega **13 métricas de red z-normalizadas** calculadas sobre grafos de similitud de voto construidos a partir de **947,434 registros de voto** en **5,694 resoluciones** y **202 estados miembros**, segmentados por ocho administraciones presidenciales de EE.UU. (1981–2025).
+
+---
+
+## Model Architecture
+
+The Influence Power Index is computed as the arithmetic mean of z-scored values across 13 network metrics, each weighted equally:
+
+| # | Metric | Description |
+|---|--------|-------------|
+| 1 | Degree Centrality | Number of connections in KNN voting similarity graph |
+| 2 | Betweenness Centrality | Frequency on shortest paths between other nodes |
+| 3 | Closeness Centrality | Average distance to all other nodes |
+| 4 | Eigenvector Centrality | Connection to well-connected nodes |
+| 5 | PageRank | Random-walk stationary distribution importance |
+| 6 | Brokerage | 1 minus Burt's constraint (structural holes) |
+| 7 | Core-Periphery | k-core number (depth of embedding in network core) |
+| 8 | K-Shell | Shell index from k-shell decomposition |
+| 9 | Multiplex Centrality | Mean eigenvector centrality across voting similarity and PCA distance layers |
+| 10 | Flow Centrality | Current-flow betweenness (random-walk brokerage) |
+| 11 | Global Gravity | PCA-based distance from global centroid (inverted) |
+| 12 | Bloc Leadership | Proximity to own cluster centroid in PCA space |
+| 13 | Predictiveness | Mean Pearson correlation with all other countries |
+
+Temporal metrics computed post-hoc include: IPI Volatility, IPI Trend, Centrality Stability, and Community Switches.
+
+---
+
+## Key Findings
+
+1. **Mid-tier nations dominate influence rankings**: The most influential countries are consistently mid-tier states occupying cross-cutting positions between voting blocs. New entrants to the UN system (Slovenia, Tajikistan after the Cold War) and states with ambiguous alignments (Turkmenistan, Serbia) score highest.
+
+2. **U.S. and Israel are structurally isolated**: The United States and Israel are structurally locked as the two least influential nations across all eight presidencies, ranking in the bottom 2% consistently. This is a consequence of their extreme minority voting positions, not a reflection of geopolitical power.
+
+3. **Biden achieved the highest U.S. IPI score** (-0.902), but the U.S. still ranked 192nd out of 193 countries.
+
+4. **Brokerage vs. connectivity are distinct roles**: Brokerage (structural holes) and eigenvector centrality are weakly correlated, confirming that bridging between communities is a distinct structural role from being embedded in a well-connected cluster.
+
+5. **Two correlated metric clusters identified**: A connectivity cluster (degree, closeness, eigenvector, PageRank, multiplex) and a brokerage cluster (betweenness, structural holes, flow centrality).
+
+6. **Turkmenistan's dramatic trajectory**: Moved from the least influential country (IPI = -2.455 under Bush Sr) to the most influential (IPI = +0.992 under Trump II).
+
+7. **Most diplomatically fluid states**: Dominican Republic, Fiji, Panama, and Papua New Guinea each switched voting communities six times across eight presidencies.
+
+---
+
+## Methodology
+
+| Component | Method | Detail |
+|-----------|--------|--------|
+| Vote Encoding | Ternary | Yes = +1, No = −1, Abstain = 0, Absent = NaN |
+| Graph Construction | KNN Voting Similarity | Pearson correlation-based similarity |
+| Dimensionality Reduction | PCA | Retaining 95% of variance |
+| Clustering | K-means | Optimal k by silhouette score maximization |
+| Community Detection | Louvain | Graph-based community identification |
+| Influence Score | Composite z-score | Mean of 13 z-scored network metrics |
+
+---
+
+## Technical Implementation
+
+The analysis pipeline includes:
+- **Graph construction** from ternary vote matrices using Pearson correlation
+- **13 centrality and structural metrics** computed via NetworkX
+- **Community detection** using Louvain algorithm
+- **Interactive choropleth maps** with Plotly for global IPI visualization
+- **Radar charts** showing 13-metric profiles per presidency
+- **Temporal trend analysis** tracking IPI evolution across administrations
+
+---
+
+## Data
+
+- **Source**: United Nations Digital Library (digitallibrary.un.org)
+- **Scope**: 947,434 vote records | 5,694 resolutions | 202 member states
+- **Period**: 1981–2025 (8 U.S. presidential administrations)

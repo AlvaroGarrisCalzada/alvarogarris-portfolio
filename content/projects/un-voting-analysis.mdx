@@ -1,0 +1,120 @@
+---
+title: "Quantitative Analysis of UN General Assembly Voting Patterns (1981-2025)"
+title_es: "Análisis Cuantitativo de Patrones de Votación en la Asamblea General de la ONU (1981-2025)"
+description: "Global Alignment, Bloc Formation & the Structural Isolation of the United States | 947K+ vote records"
+description_es: "Alineamiento Global, Formación de Bloques y el Aislamiento Estructural de EE.UU. | 947K+ registros de voto"
+tech: ["Python", "PCA", "K-Means Clustering", "Pearson Correlation", "UMAP", "Data Visualization", "Plotly", "NetworkX"]
+githubUrl: "https://github.com/AlvaroGarrisCalzada/UN_Analysis"
+featured: true
+screenshots: ["/images/projects/radar_Trump_II.png"]
+---
+
+## Research Overview
+
+This study examines voting patterns in the **United Nations General Assembly (UNGA)** across eight U.S. presidential administrations, from **Reagan (1981) through Trump II (2025)**. Using Pearson correlation-based alignment scoring, K-means clustering on PCA-reduced vote matrices, and topic-level disaggregation, the analysis reveals the structural and persistent isolation of the United States within the General Assembly — across all administrations and all substantive topic categories.
+
+The dataset comprises **947,434 vote records** across **5,694 resolutions** and **202 member states**.
+
+## Descripción de la Investigación
+
+Este estudio examina los patrones de votación en la **Asamblea General de las Naciones Unidas (AGNU)** a lo largo de ocho administraciones presidenciales de EE.UU., desde **Reagan (1981) hasta Trump II (2025)**. Utilizando puntuación de alineamiento basada en correlación de Pearson, clustering K-means sobre matrices de voto reducidas por PCA, y desagregación por temas, el análisis revela el aislamiento estructural y persistente de Estados Unidos dentro de la Asamblea General — a lo largo de todas las administraciones y todas las categorías temáticas sustantivas.
+
+El dataset comprende **947,434 registros de voto** en **5,694 resoluciones** y **202 estados miembros**.
+
+---
+
+## Headline Findings
+
+| Finding | Detail |
+|---------|--------|
+| U.S. isolation is structural | The global pro-US mean has been negative for every presidency except Bush Sr (+0.031) |
+| Trump II is the deepest low | Pro-US mean of −0.171, the lowest in the dataset |
+| China is the consensus power | Highest global agreement rate on all 10 topic categories |
+| Only Israel is a majority ally | 75.6% agreement; the next closest (Micronesia) is 55.4% |
+| Biden → Trump II transition | 97.4% cluster switching — near-total global realignment |
+| U.S. majority on 1 topic only | Terrorism & Security (51.6%, based on 34 resolutions) |
+
+---
+
+## Methodology
+
+| Component | Method | Detail |
+|-----------|--------|--------|
+| Vote Encoding | Ternary | Yes = +1, No = −1, Abstain = 0, Absent = NaN |
+| Alignment Score | Pearson correlation | Country vote vector vs. U.S. vote vector per presidency |
+| Dimensionality Reduction | PCA | Retaining 95% of variance |
+| Clustering | K-means | Optimal k selected by silhouette score maximization |
+| Topic Classification | Keyword matching | 5,694 resolutions → 10 categories from 438 UN subject fields |
+| Cluster Switching | Transition rate | % of countries changing cluster at each presidential transition |
+
+The ternary encoding was validated empirically: silhouette score of 0.44 vs. 0.30 for binary encoding.
+
+---
+
+## Key Results
+
+### Pro-US Alignment by Presidency
+
+| Presidency | Period | Pro-US Mean | Resolutions | Countries |
+|------------|--------|-------------|-------------|-----------|
+| Bush Sr | 1989–1992 | +0.031 | 352 | 180 |
+| Clinton | 1993–2000 | +0.007 | 563 | 188 |
+| Reagan | 1981–1988 | −0.033 | 1,198 | 158 |
+| Biden | 2021–2024 | −0.012 | 358 | 193 |
+| Obama | 2009–2016 | −0.057 | 586 | 193 |
+| Trump I | 2017–2020 | −0.077 | 401 | 193 |
+| Bush Jr | 2001–2008 | −0.111 | 627 | 194 |
+| Trump II | 2025–present | −0.171 | 192 | 191 |
+
+### Superpower Bloc Comparison
+
+| Power | Countries in Bloc | Topics with Majority | Closest Ally |
+|-------|-------------------|---------------------|--------------|
+| China | ~170 | ~90 | North Korea (93%) |
+| Russia | ~120 | ~5 | Belarus (77%) |
+| USA | ~15 | 0 | Israel (76%) |
+
+### Topic-Level U.S. Agreement Rates
+
+| Topic | Resolutions | Global Agreement with US |
+|-------|-------------|------------------------|
+| Terrorism & Security | 34 | 51.6% |
+| International Law & UN Reform | 291 | 34.2% |
+| Health & Humanitarian | 44 | 31.8% |
+| Human Rights | 813 | 27.8% |
+| Economic Development | 158 | 22.8% |
+| Nuclear & Disarmament | 1,100 | 18.5% |
+| Palestine & Middle East | 829 | 6.6% |
+| Decolonization & Sovereignty | 358 | 5.0% |
+
+### Cluster Switching at Presidential Transitions
+
+| Transition | Switching Rate |
+|------------|---------------|
+| Biden → Trump II | 97.4% |
+| Bush Sr → Clinton | 66.5% |
+| Clinton → Bush Jr | 55.2% |
+| Bush Jr → Obama | 49.7% |
+| Obama → Trump I | 45.3% |
+| Trump I → Biden | 42.8% |
+| Reagan → Bush Sr | 38.1% |
+
+---
+
+## Visualizations
+
+The project produces extensive analytical visualizations:
+- **PCA cluster scatter plots** per presidency showing country vote vector projections
+- **Pro-US score histograms** showing alignment distributions across all countries
+- **UMAP projection** of the full vote matrix for non-linear dimensionality reduction
+- **Interactive choropleth map** (Plotly) showing pro-US alignment by country and presidency
+- **20 publication-ready figures** covering isolation trends, topic heatmaps, bloc sizes, radar charts, and network visualizations
+
+---
+
+## Data
+
+- **Source**: United Nations Digital Library (digitallibrary.un.org)
+- **Scope**: 947,434 vote records | 5,694 resolutions | 202 member states
+- **Period**: 1981–2025 (8 U.S. presidential administrations)
+- **Topic Categories**: 10 categories derived from 438 UN subject fields

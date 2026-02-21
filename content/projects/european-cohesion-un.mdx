@@ -1,0 +1,92 @@
+---
+title: "European Voting Cohesion in the UN General Assembly (1981-2025)"
+title_es: "Cohesión de Voto Europea en la Asamblea General de la ONU (1981-2025)"
+description: "EU Foreign Policy Convergence Across U.S. Presidential Administrations | 43 European States"
+description_es: "Convergencia de Política Exterior de la UE a lo largo de Administraciones Presidenciales de EE.UU. | 43 Estados Europeos"
+tech: ["Python", "Statistical Analysis", "Pairwise Agreement", "Data Visualization", "Seaborn", "Plotly", "Pandas"]
+githubUrl: "https://github.com/AlvaroGarrisCalzada/European_Cohesion_UN"
+featured: true
+screenshots: ["/images/projects/europe.png"]
+---
+
+## Research Overview
+
+This study presents a quantitative analysis of **European voting cohesion** in the United Nations General Assembly (UNGA) across eight United States presidential administrations (1981–2025). Using pairwise voting agreement rates computed on ternary-encoded vote matrices for **43 European states**, the research documents the transformation of European voting behavior from a **divided continent during the Cold War** (61.8% average pairwise agreement under Reagan) to a **near-monolithic voting bloc** at peak cohesion (93.4% under Bush Jr).
+
+## Descripción de la Investigación
+
+Este estudio presenta un análisis cuantitativo de la **cohesión de voto europea** en la Asamblea General de las Naciones Unidas (AGNU) a lo largo de ocho administraciones presidenciales de Estados Unidos (1981–2025). Utilizando tasas de acuerdo por pares calculadas sobre matrices de voto codificadas en ternario para **43 estados europeos**, la investigación documenta la transformación del comportamiento de voto europeo desde un **continente dividido durante la Guerra Fría** (61,8% de acuerdo por pares bajo Reagan) hasta un **bloque de voto casi monolítico** en su momento de máxima cohesión (93,4% bajo Bush Jr).
+
+---
+
+## Key Findings
+
+### Cohesion Evolution by Presidency
+
+| Presidency | Period | European Cohesion | EU-27 Cohesion | Min Pairwise Agreement |
+|------------|--------|-------------------|----------------|----------------------|
+| Reagan | 1981–1988 | 61.8% | 63.0% | 25.7% |
+| Bush Sr | 1989–1992 | 76.8% | 80.2% | 34.8% |
+| Clinton | 1993–2000 | 88.0% | 90.0% | 62.0% |
+| Bush Jr | 2001–2008 | 93.4% | 94.4% | 74.8% |
+| Obama | 2009–2016 | 91.5% | 93.0% | 69.1% |
+| Trump I | 2017–2020 | 88.7% | 90.9% | 64.6% |
+| Biden | 2021–2024 | 87.4% | 90.0% | 56.1% |
+| Trump II | 2025–present | 91.1% | 92.9% | 76.6% |
+
+### Principal Findings
+
+1. **31.6 percentage point increase** in European voting cohesion from Reagan to Bush Jr, reflecting the end of the Cold War, EU enlargement, and the Common Foreign and Security Policy.
+
+2. **Peak cohesion of 93.4%** was reached under Bush Jr (2001–2008), when even the most divergent European pair agreed on 74.8% of resolutions.
+
+3. **Moderate decline after 2008**, reaching 87.4% under Biden, driven by divergent positions on Middle East issues, post-Brexit UK trajectory, and rising populism.
+
+4. **Recovery to 91.1% under Trump II**, suggesting European unification in response to U.S. unilateralism and withdrawal from multilateral institutions.
+
+5. **EU-27 coordination effect confirmed**: EU-27 members consistently show 2–3 percentage points higher cohesion than the broader European group, confirming the coordination role of EU institutions.
+
+6. **United Kingdom was the least cohesive** major European country during the Reagan era.
+
+---
+
+## Methodology
+
+1. **Pairwise Agreement**: For each pair of European countries, the fraction of resolutions where both countries cast identical votes (excluding absences) is computed per presidency period.
+
+2. **Cohesion Metric**: The arithmetic mean of all pairwise agreement rates within the European group, computed separately for each presidency.
+
+3. **EU-27 Subset**: A separate cohesion metric restricted to current EU-27 members, to isolate the effect of EU institutional coordination.
+
+4. **Minimum Pairwise Agreement**: The lowest pairwise agreement rate observed within Europe per presidency, identifying the most divergent country pairs.
+
+---
+
+## Analytical Insights
+
+### Cold War to Post-Cold War Transition
+The analysis captures the dramatic shift in European voting behavior as the Cold War ended. Under Reagan, European states were deeply divided, with some pairs agreeing on as few as 25.7% of resolutions. The integration of former Eastern Bloc states and the establishment of the Common Foreign and Security Policy transformed Europe into the most unified voting bloc in the General Assembly.
+
+### The Brexit Effect
+The post-2016 period shows the UK's growing divergence from European consensus, contributing to the decline in broader European cohesion metrics while EU-27 cohesion remained relatively stable.
+
+### Reactive Unification Under Trump II
+The sharp recovery in cohesion under Trump II (91.1%) provides quantitative evidence for the hypothesis that European states unify their multilateral positions in response to perceived U.S. unilateralism — a finding with significant implications for transatlantic relations theory.
+
+---
+
+## Visualizations
+
+- **Interactive five-tab European analysis map** showing cohesion by country and presidency
+- **Cohesion evolution charts** tracking pairwise agreement over time
+- **EU-27 vs. broader Europe comparison** visualizations
+- **Country-level divergence** heatmaps identifying outlier states
+
+---
+
+## Data
+
+- **Source**: United Nations Digital Library (digitallibrary.un.org)
+- **Scope**: 947,434 vote records | 202 member states | 43 European countries
+- **Period**: 1981–2025 (8 U.S. presidential administrations)
+- **European Definition**: EU-27 + EFTA members + UK + EU candidate countries + other European states
