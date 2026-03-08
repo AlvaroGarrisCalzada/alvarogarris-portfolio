@@ -2,26 +2,24 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { MDXRemote } from 'next-mdx-remote';
 import { Tag } from '@/components/Tag';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { Experience } from '@/types/content';
 
 interface ExperienceDetailClientProps {
-  experience: Experience & {
-    mdxSource: any;
-    mdxSource_es?: any;
-  };
+  experience: Experience;
+  mdxContentEn: React.ReactNode;
+  mdxContentEs: React.ReactNode;
 }
 
-export function ExperienceDetailClient({ experience }: ExperienceDetailClientProps) {
+export function ExperienceDetailClient({ experience, mdxContentEn, mdxContentEs }: ExperienceDetailClientProps) {
   const { language, t } = useLanguage();
   
   const role = language === 'es' ? (experience.role_es || experience.role) : experience.role;
   const location = language === 'es' ? (experience.location_es || experience.location) : experience.location;
   const endDate = language === 'es' ? (experience.endDate_es || experience.endDate) : experience.endDate;
   const tags = language === 'es' ? (experience.tags_es || experience.tags) : experience.tags;
-  const mdxSource = language === 'es' ? (experience.mdxSource_es || experience.mdxSource) : experience.mdxSource;
+  const mdxContent = language === 'es' ? mdxContentEs : mdxContentEn;
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-16">
@@ -110,7 +108,7 @@ export function ExperienceDetailClient({ experience }: ExperienceDetailClientPro
             [&>hr]:my-8 [&>hr]:border-slate-200 [&>hr]:dark:border-slate-700
             [&_strong]:text-slate-900 [&_strong]:dark:text-white [&_strong]:font-semibold
             [&>blockquote]:border-l-4 [&>blockquote]:border-primary-500 [&>blockquote]:pl-4 [&>blockquote]:py-2 [&>blockquote]:bg-primary-50 [&>blockquote]:dark:bg-primary-900/20 [&>blockquote]:rounded-r">
-            {mdxSource && <MDXRemote {...mdxSource} />}
+            {mdxContent}
           </div>
         </div>
       </div>

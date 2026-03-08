@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getExperienceBySlug, getAllExperience } from '@/lib/content';
 import { ExperienceDetailClient } from './ExperienceDetailClient';
 
@@ -69,17 +69,11 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
     spanishContent = fullContent;
   }
 
-  // Serialize both versions
-  const mdxSource = await serialize(englishContent.trim());
-  const mdxSource_es = await serialize(spanishContent.trim());
-
   return (
     <ExperienceDetailClient 
-      experience={{
-        ...experience,
-        mdxSource,
-        mdxSource_es
-      }} 
+      experience={experience}
+      mdxContentEn={<MDXRemote source={englishContent.trim()} />}
+      mdxContentEs={<MDXRemote source={spanishContent.trim()} />}
     />
   );
 }
