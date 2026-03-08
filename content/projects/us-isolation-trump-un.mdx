@@ -1,0 +1,106 @@
+---
+title: "Is Trump's Second Term Isolating the USA Internationally?"
+title_es: "¿Está el Segundo Mandato de Trump Aislando a EE.UU. Internacionalmente?"
+description: "Network Science Analysis of 947K+ UN General Assembly Votes (1981–2025) | 12-Metric Influence Power Index across 5,694 Resolutions and 202 Countries"
+description_es: "Análisis de Ciencia de Redes de 947K+ Votos en la Asamblea General de la ONU (1981–2025) | Índice de Poder de Influencia con 12 Métricas en 5.694 Resoluciones y 202 Países"
+tech: ["Python", "Network Science", "PCA", "K-Means Clustering", "Pearson Correlation", "UMAP", "Data Visualization", "Plotly", "NetworkX"]
+githubUrl: "https://github.com/AlvaroGarrisCalzada/UN_Analysis"
+pdfReport: "/projects/us-isolation-trump-un.pdf"
+featured: true
+screenshots: ["/images/projects/us-isolation-trump-un.png"]
+---
+
+## Research Overview
+
+After analyzing **947,434 UN General Assembly votes** (1981–2025) using a **12-metric network science Influence Power Index** across **5,694 resolutions** and **202 countries**, the results point to a clear structural pattern: U.S. structural isolation at the UN is not new, but Trump's second term represents a measurable acceleration of that trend — occurring simultaneously with historically high European cohesion and global bloc fragmentation.
+
+## Descripción de la Investigación
+
+Tras analizar **947.434 votos en la Asamblea General de la ONU** (1981–2025) utilizando un **Índice de Poder de Influencia de ciencia de redes con 12 métricas** en **5.694 resoluciones** y **202 países**, los resultados apuntan a un patrón estructural claro: el aislamiento estructural de EE.UU. en la ONU no es nuevo, pero el segundo mandato de Trump representa una aceleración medible de esa tendencia — ocurriendo simultáneamente con una cohesión europea históricamente alta y una fragmentación de bloques globales.
+
+---
+
+## Headline Findings
+
+### Finding #1: Deepest Global Isolation in 40 Years
+Trump II records the **lowest global alignment score in 40 years** (-0.171), the deepest level of U.S. isolation in the dataset.
+
+### Finding #2: Bottom 2% of Global Influence
+Across every presidency analyzed, the United States ranks in the **bottom 2% of global influence** in the UNGA voting network.
+
+### Finding #3: Broader Topic-Level Isolation
+On every major issue area — from decolonization to human rights — **Trump II's agreement rates are lower than Biden's**, indicating broader topic-level isolation.
+
+### Finding #4: Largest Global Voting Realignment
+The Biden → Trump II transition triggered the **largest global voting realignment in four decades**, with **97.4% of countries switching clusters**.
+
+### Finding #5: U.S.–Israel Parallel Isolation
+The U.S. and Israel consistently occupy the **most structurally isolated positions** in the UN voting network, with parallel Influence Power Index trajectories.
+
+### Finding #6: European Cohesion Doubles
+European voting cohesion has **nearly doubled since the Cold War** (61.8% → 91.1%), with the EU-27 voting even more cohesively, suggesting Europe is consolidating internally as U.S. unilateralism intensifies.
+
+---
+
+## Hallazgos Principales
+
+### Hallazgo #1: Aislamiento Global Más Profundo en 40 Años
+Trump II registra la **puntuación de alineamiento global más baja en 40 años** (-0,171), el nivel más profundo de aislamiento de EE.UU. en el dataset.
+
+### Hallazgo #2: Último 2% de Influencia Global
+En todas las presidencias analizadas, Estados Unidos se sitúa en el **último 2% de influencia global** en la red de votaciones de la AGNU.
+
+### Hallazgo #3: Aislamiento Temático Más Amplio
+En todas las áreas temáticas principales — desde descolonización hasta derechos humanos — **las tasas de acuerdo de Trump II son inferiores a las de Biden**, indicando aislamiento temático más amplio.
+
+### Hallazgo #4: Mayor Realineamiento de Votación Global
+La transición Biden → Trump II desencadenó el **mayor realineamiento de votación global en cuatro décadas**, con **97,4% de países cambiando de grupo**.
+
+### Hallazgo #5: Aislamiento Paralelo EE.UU.–Israel
+EE.UU. e Israel ocupan consistentemente las **posiciones más estructuralmente aisladas** en la red de votaciones de la ONU, con trayectorias paralelas del Índice de Poder de Influencia.
+
+### Hallazgo #6: Cohesión Europea se Duplica
+La cohesión de voto europea ha **casi duplicado desde la Guerra Fría** (61,8% → 91,1%), con la UE-27 votando aún más cohesivamente, sugiriendo que Europa se consolida internamente mientras el unilateralismo de EE.UU. se intensifica.
+
+---
+
+## Pro-US Alignment by Presidency
+
+| Presidency | Period | Pro-US Mean | Resolutions | Countries |
+|------------|--------|-------------|-------------|-----------|
+| Bush Sr | 1989–1992 | +0.031 | 352 | 180 |
+| Clinton | 1993–2000 | +0.007 | 563 | 188 |
+| Reagan | 1981–1988 | −0.033 | 1,198 | 158 |
+| Biden | 2021–2024 | −0.012 | 358 | 193 |
+| Obama | 2009–2016 | −0.057 | 586 | 193 |
+| Trump I | 2017–2020 | −0.077 | 401 | 193 |
+| Bush Jr | 2001–2008 | −0.111 | 627 | 194 |
+| Trump II | 2025–present | −0.171 | 192 | 191 |
+
+---
+
+## Methodology
+
+| Component | Method | Detail |
+|-----------|--------|--------|
+| Vote Encoding | Ternary | Yes = +1, No = −1, Abstain = 0, Absent = NaN |
+| Alignment Score | Pearson correlation | Country vote vector vs. U.S. vote vector per presidency |
+| Dimensionality Reduction | PCA | Retaining 95% of variance |
+| Clustering | K-means | Optimal k selected by silhouette score maximization |
+| Influence Model | 12-metric IPI | Network centrality, brokerage, gravity, and predictiveness |
+| Topic Classification | Keyword matching | 5,694 resolutions → 10 categories from 438 UN subject fields |
+
+---
+
+## The Core Question
+
+The question is no longer whether the U.S. is isolated within the UN system. **The real question is whether that isolation is strategic, or systemic.**
+
+---
+
+## Data
+
+- **Source**: United Nations Digital Library (digitallibrary.un.org)
+- **Scope**: 947,434 vote records | 5,694 resolutions | 202 member states
+- **Period**: 1981–2025 (8 U.S. presidential administrations)
+- **Metrics**: 12-metric Influence Power Index using network science
