@@ -1,5 +1,13 @@
 [
   {
+    "id": "ie-international-business-competition",
+    "title": "#1 Prize IE International Business Case Competition (with Amazon)",
+    "issuer": "IE Business School",
+    "date": "Mar 2026",
+    "credentialUrl": "https://www.youtube.com/watch?v=8OIv3fwsyKo",
+    "pdfPath": "/certificates/ie-international-business-competition.pdf"
+  },
+  {
     "id": "bloomberg-quantitative",
     "title": "Bloomberg Quantitative Analysis Course",
     "issuer": "Bloomberg",
